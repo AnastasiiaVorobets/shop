@@ -23,7 +23,7 @@ export class CatalogComponent implements OnInit {
   }
 
   getProducts(): void {
-    this.http.get<Product[]>('https://api.escuelajs.co/api/v1/products')
+    this.http.get<Product[]>('https://api.escuelajs.co/api/v1/products?price_min=20&price_max=99')
       .subscribe(
         products => {
           if (products && products.length > 0) {

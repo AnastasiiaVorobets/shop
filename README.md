@@ -1,4 +1,3 @@
-- [An overview of the solution]()
 - [DEMO](https://anastasiiavorobets.github.io/shop/)
 
 ## About the project
