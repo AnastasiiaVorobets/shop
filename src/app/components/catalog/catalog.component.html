@@ -5,11 +5,21 @@
       <button (click)="setSortCriteria('title')">Sort by Name</button>
       <button (click)="setSortCriteria('price')">Sort by Price</button>
     </div>
-    <button *ngIf="!(sidebarService.sidebarVisibility$ | async)" (click)="openCartSidebar()" class="open-cart-button">Open Cart</button>
+    <button
+      *ngIf="!(sidebarService.sidebarVisibility$ | async)"
+      (click)="openCartSidebar()"
+      class="open-cart-button"
+    >
+      View Cart
+    </button>
     <app-cart-sidebar *ngIf="sidebarService.sidebarVisibility$ | async"></app-cart-sidebar>
   </div>
+
   <div class="product-list">
-    <app-catalog-item *ngFor="let product of sortedProducts.slice(0, visibleProductCount)" [product]="product"></app-catalog-item>
+    <app-catalog-item
+      *ngFor="let product of sortedProducts.slice(0, visibleProductCount)"
+      [product]="product"
+    ></app-catalog-item>
   </div>
   <div class="show-more-button-container" *ngIf="remainingProducts > 0">
     <button class="show-more-button" (click)="showMoreProducts()">Show More</button>

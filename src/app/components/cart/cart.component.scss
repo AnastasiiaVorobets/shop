@@ -1,9 +1,9 @@
 .cart-items-container {
-  margin: 0 30px;
+  margin: 0 10px;
   padding: 20px;
 
   h2 {
-    margin: 20px 0;
+    margin: 30px 20px;
   }
 
   .cart-item {
@@ -48,4 +48,26 @@
   .empty-cart-message {
     color: #666;
   }
+}
+
+.empty-cart-message {
+  font-size: 30px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.catalog-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #a5c9ef;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.catalog-button:hover {
+  background-color: #353d46;
 }

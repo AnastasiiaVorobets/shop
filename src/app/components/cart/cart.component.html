@@ -1,7 +1,16 @@
-<div *ngIf="cartItems && cartItems.length > 0; else emptyCart" class="cart-items-container">
-  <h2>Your cart:</h2>
-  <div *ngFor="let product of cartItems" class="cart-item">
-    <app-cart-item [product]="product" (removeItem)="removeFromCart($event)"></app-cart-item>
+<div
+  *ngIf="cartItems && cartItems.length > 0; else emptyCart"
+  class="cart-items-container"
+>
+  <h2>Shopping Cart:</h2>
+  <div
+    *ngFor="let product of cartItems"
+    class="cart-item"
+  >
+    <app-cart-item
+      [product]="product"
+      (removeItem)="removeFromCart($event)"
+    ></app-cart-item>
   </div>
   <div class="cart-buttons">
     <button (click)="goToHomePage()" class="home-button">Go to Home Page</button>
@@ -10,5 +19,11 @@
 </div>
 
 <ng-template #emptyCart>
-  <p class="empty-cart-message">Cart is empty</p>
+  <p class="empty-cart-message">Oops...Cart is empty:(</p>
+  <button
+    (click)="goToHomePage()"
+    class="catalog-button"
+  >
+    Go to catalog
+  </button>
 </ng-template>

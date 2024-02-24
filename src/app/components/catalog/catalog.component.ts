@@ -8,6 +8,7 @@ import { Product } from '../../types/product';
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss']
 })
+
 export class CatalogComponent implements OnInit {
   products: Product[] = [];
   sortedProducts: Product[] = [];
@@ -72,7 +73,7 @@ export class CatalogComponent implements OnInit {
   }
 
   showMoreProducts(): void {
-    this.visibleProductCount += 4;
+    this.visibleProductCount += 8;
   }
 
   get remainingProducts(): number {

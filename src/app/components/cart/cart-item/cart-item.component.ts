@@ -6,6 +6,7 @@ import { Product } from '../../../types/product';
   templateUrl: './cart-item.component.html',
   styleUrls: ['./cart-item.component.scss']
 })
+
 export class CartItemComponent {
   @Input() product!: Product;
   @Output() removeItem = new EventEmitter<Product>();

@@ -2,5 +2,8 @@
   <img [src]="product.images" alt="{{ product.title }}">
   <h2>{{ product.title }}</h2>
   <p>Price: ${{ product.price }}</p>
-  <button (click)="addToCart(product)">Add to Cart</button>
+  <button [class.added]="product.addedToCart" (click)="addToCart(product)">
+    <span *ngIf="!product.addedToCart">Add to Cart</span>
+    <span *ngIf="product.addedToCart">Added</span>
+  </button>
 </div>

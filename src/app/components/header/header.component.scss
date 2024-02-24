@@ -7,7 +7,7 @@ header {
   nav {
     ul {
       padding: 0;
-      margin: 0 50px;
+      margin: 0 300px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -29,11 +29,19 @@ header {
           transition: color 0.3s ease;
 
           &:hover {
-            color: #3382be;
+            color: #adb8c1;
             transform: scale(1.1);
           }
         }
       }
     }
   }
+
+  @media (max-width: 900px) {
+    nav ul {
+      margin: 0 50px;
+    }
+  }
 }
+
+

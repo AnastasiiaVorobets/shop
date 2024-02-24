@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from '../../../services/cart.service';
 import { Product } from '../../../types/product';
 
@@ -16,6 +16,7 @@ export class CatalogItemComponent {
 
   addToCart(product: Product): void {
     this.cartService.addToCart(product);
-    console.log(product)
+    product.addedToCart = true;
+    console.log(product);
   }
 }

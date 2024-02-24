@@ -3,5 +3,10 @@
   <div *ngFor="let item of cartItems">
     <p>{{ item.title }} - ${{ item.price }}</p>
   </div>
-  <button class="close-button" (click)="closeCartSidebar()">Close</button>
+  <button
+    class="close-button"
+    (click)="closeCartSidebar()"
+  >
+    Close
+  </button>
 </div>
