@@ -1,0 +1,8 @@
+<div class="cart-item">
+  <div class="item-data">
+    <img [src]="product.images" alt="{{ product.title }}">
+    <p>{{ product.title }} - ${{ product.price }} </p>
+  </div>
+
+  <button (click)="onRemoveItem()">Remove</button>
+</div>

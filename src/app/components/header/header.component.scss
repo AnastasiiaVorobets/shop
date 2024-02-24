@@ -1,0 +1,39 @@
+header {
+  padding: 20px 0;
+  height: 85px;
+  text-align: center;
+  background-color: #d2d4dc;
+
+  nav {
+    ul {
+      padding: 0;
+      margin: 0 50px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      list-style: none;
+
+      li {
+        margin-top: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          font-size: 18px;
+          font-weight: bold;
+          font-size: 22px;
+          text-decoration: none;
+          color: black;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #3382be;
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}

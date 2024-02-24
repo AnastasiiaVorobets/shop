@@ -1,0 +1,14 @@
+<div *ngIf="cartItems && cartItems.length > 0; else emptyCart" class="cart-items-container">
+  <h2>Your cart:</h2>
+  <div *ngFor="let product of cartItems" class="cart-item">
+    <app-cart-item [product]="product" (removeItem)="removeFromCart($event)"></app-cart-item>
+  </div>
+  <div class="cart-buttons">
+    <button (click)="goToHomePage()" class="home-button">Go to Home Page</button>
+    <button (click)="clearCart()" class="clear-cart-button">Clear Cart</button>
+  </div>
+</div>
+
+<ng-template #emptyCart>
+  <p class="empty-cart-message">Cart is empty</p>
+</ng-template>
