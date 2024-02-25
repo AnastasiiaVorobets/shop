@@ -31,4 +31,5 @@ export class CartComponent implements OnInit {
   goToHomePage(): void {
     this.router.navigate(['/']);
   }
+
 }

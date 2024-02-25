@@ -6,7 +6,6 @@ import { Product } from '../../../types/product';
   selector: 'app-catalog-item',
   templateUrl: './catalog-item.component.html',
   styleUrls: ['./catalog-item.component.scss'],
-  providers: [CartService]
 })
 
 export class CatalogItemComponent {
@@ -17,6 +16,9 @@ export class CatalogItemComponent {
   addToCart(product: Product): void {
     this.cartService.addToCart(product);
     product.addedToCart = true;
-    console.log(product);
+
+    setTimeout(() => {
+      product.addedToCart = false;
+    }, 1000);
   }
 }

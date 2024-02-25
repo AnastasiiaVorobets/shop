@@ -2,14 +2,14 @@
   *ngIf="cartItems && cartItems.length > 0; else emptyCart"
   class="cart-items-container"
 >
-  <h2>Shopping Cart:</h2>
+  <h2>Shopping Cart</h2>
   <div
     *ngFor="let product of cartItems"
     class="cart-item"
   >
     <app-cart-item
       [product]="product"
-      (removeItem)="removeFromCart($event)"
+      (removeItem)="removeFromCart(product)"
     ></app-cart-item>
   </div>
   <div class="cart-buttons">

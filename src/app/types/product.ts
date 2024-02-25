@@ -4,4 +4,5 @@ export interface Product {
   price: number;
   images: string[];
   addedToCart: boolean;
+  quantityInCart: number;
 }

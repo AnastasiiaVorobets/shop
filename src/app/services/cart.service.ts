@@ -6,11 +6,19 @@ import { Product } from '../types/product';
 })
 export class CartService {
   private cartKey = 'cartItems';
+  
+
   constructor() { }
 
   addToCart(product: Product): void {
     let cartItems = this.getCartItems();
-    cartItems.push(product);
+    const existingProductIndex = cartItems.findIndex(item => item.id === product.id);
+    if (existingProductIndex !== -1) {
+      cartItems[existingProductIndex].quantityInCart++;
+    } else {
+      product.quantityInCart = 1;
+      cartItems.push(product);
+    }
     this.saveCartItems(cartItems);
   }
 
@@ -18,6 +26,7 @@ export class CartService {
     let cartItems = this.getCartItems();
     cartItems = cartItems.filter(item => item.id !== product.id);
     this.saveCartItems(cartItems);
+
   }
 
   getCartItems(): Product[] {
@@ -31,5 +40,11 @@ export class CartService {
 
   clearCart(): void {
     localStorage.removeItem(this.cartKey);
+  }
+
+  getQuantity(product: Product): number {
+    let cartItems = this.getCartItems();
+    const cartItem = cartItems.find(item => item.id === product.id);
+    return cartItem ? cartItem.quantityInCart : 0;
   }
 }
