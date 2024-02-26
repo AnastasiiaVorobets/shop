@@ -11,7 +11,6 @@ import { CartModule } from './components/cart/cart.module';
 import { CartService } from './services/cart.service';
 import { SidebarService } from './services/sidebar.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,

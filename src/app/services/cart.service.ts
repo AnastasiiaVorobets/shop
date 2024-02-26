@@ -6,7 +6,6 @@ import { Product } from '../types/product';
 })
 export class CartService {
   private cartKey = 'cartItems';
-  
 
   constructor() { }
 
@@ -26,7 +25,6 @@ export class CartService {
     let cartItems = this.getCartItems();
     cartItems = cartItems.filter(item => item.id !== product.id);
     this.saveCartItems(cartItems);
-
   }
 
   getCartItems(): Product[] {
